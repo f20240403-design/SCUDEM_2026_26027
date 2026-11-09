@@ -1,0 +1,19 @@
+[03:53:03 |    0.0 min] ==== overnight_rmse(full) started 2026-11-05 03:53:03 ====
+[03:53:03 |    0.0 min] config: {"workers":10,"resume":true,"batch":50,"perturb":0.08,"locoStarts":3,"M":400,"Mboot":300,"Mfinal":4000,"Bg":2000,"Bgp":1500,"B":6000,"Bvar":400,"nG":24,"nD":24,"nL":24,"nS":10,"delays":[0,0.25,0.5,1,1.5,2,3],"nTop":40,"refineEvals":2500,"bootEvals":700,"maxRounds":30,"budget":[900,1800,900,4800,900,3000,1500,600],"Narm":200000,"Nsobol":131072,"armBoot":3000}
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 10 workers.
+[03:53:33 |    0.5 min] parallel pool: 10 workers
+[03:53:36 |    0.5 min] episodes: TT 188 (32 children, 125 with known age), held-out KD+TF 85 (27 children)
+[03:53:36 |    0.5 min] S0 loaded from checkpoint
+[03:53:36 |    0.5 min] one objective evaluation: 33.8 ms (M = 400 draws per episode)
+[03:53:36 |    0.5 min] S1 loaded from checkpoint
+[03:53:36 |    0.5 min] S1 best grid point: [0.1794 1.605 2.214 0.6222 0] -> stacked RMSE 0.01266
+[03:53:36 |    0.5 min] S2 loaded from checkpoint
+[03:53:36 |    0.5 min] S3 loaded from checkpoint (5250 resamples)
+[03:53:36 |    0.5 min] S4 loaded from checkpoint
+[03:53:36 |    0.5 min] S5 loaded from checkpoint
+[03:53:36 |    0.5 min] S6 loaded from checkpoint
+[03:53:36 |    0.6 min] S7 loaded from checkpoint
+[03:53:55 |    0.9 min] S8 final evaluation and outputs done (19 s)
+[03:53:55 |    0.9 min] ==== finished, total 0.9 min ====
+Parallel pool using the 'Processes' profile is shutting down.

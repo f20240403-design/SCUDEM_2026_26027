@@ -1,0 +1,38 @@
+u_lift (cm): central 0.0646, band-low corner 0.1019, band-high corner 0.0334
+u_lift range over m_p 0.13-0.24, m_o 0.165-0.66: 0.0334 - 0.1019 cm
+k_s needed for u_lift = 0.5 cm with 0.9 kg: 15.3 N/cm
+
+male: tightness cut-off a0 = 16.2 yr (central Gamma); clearance/length always fire below 18? length cut-off a0 = 21.0 yr
+female: tightness cut-off a0 = 11.0 yr (central Gamma); clearance/length always fire below 18? length cut-off a0 = 17.6 yr
+
+Arm prediction table (months): a0 | boys central [band] crit | girls central [band] crit
+ 4 & 14.9 & 9.3--31.5 & clearance & 16.5 & 10.3--35.6 & clearance \\
+ 6 & 15.5 & 9.6--33.2 & clearance & 18.0 & 11.1--39.8 & clearance \\
+ 8 & 16.9 & 10.4--37.0 & clearance & 20.7 & 12.6--47.6 & clearance \\
+10 & 19.3 & 11.8--43.7 & clearance & 25.1 & 15.1--61.4 & clearance \\
+12 & 23.1 & 14.0--54.8 & clearance & 32.3 & 19.0--88.0 & clearance \\
+14 & 28.9 & 17.2--74.0 & clearance & 43.8 & 24.9--161.1 & clearance \\
+16 & 38.0 & 22.0--113.1 & clearance & 64.2 & 34.2--Inf & clearance \\
+a0 = 10 boys, u_lift = 0.000 cm -> T* = 20.20 months (clearance)
+a0 = 10 boys, u_lift = 0.065 cm -> T* = 19.27 months (clearance)
+a0 = 10 boys, u_lift = 0.102 cm -> T* = 18.74 months (clearance)
+a0 = 10 boys, no tightness: T* = 19.27 months (clearance)
+length-only T* at a0 = 2 (boys): 21.0 months
+length-only T* at a0 = 3 (boys): 20.8 months
+length-only T* at a0 = 4 (boys): 20.8 months
+length-only T* at a0 = 5 (boys): 21.2 months
+length-only T* at a0 = 6 (boys): 21.7 months
+
+Statics, boys, central masses m_p = 0.24, m_o = 0.33, l_p = 0.5 l_h
+age  4: l_h 0.280 m, l_ua 0.214 m, M_b 17.6 kg | M_s hold 1.24 N m, curl 0.62 N m, F_ax curl -4.84 N | tau_sh 2.43 N m, index 0.360 N m/kg^(2/3)
+age  6: l_h 0.315 m, l_ua 0.242 m, M_b 22.3 kg | M_s hold 1.39 N m, curl 0.70 N m, F_ax curl -4.84 N | tau_sh 2.74 N m, index 0.346 N m/kg^(2/3)
+age  8: l_h 0.347 m, l_ua 0.270 m, M_b 28.4 kg | M_s hold 1.53 N m, curl 0.77 N m, F_ax curl -4.84 N | tau_sh 3.04 N m, index 0.327 N m/kg^(2/3)
+age 10: l_h 0.375 m, l_ua 0.292 m, M_b 35.4 kg | M_s hold 1.66 N m, curl 0.83 N m, F_ax curl -4.84 N | tau_sh 3.29 N m, index 0.305 N m/kg^(2/3)
+age 12: l_h 0.410 m, l_ua 0.318 m, M_b 42.6 kg | M_s hold 1.81 N m, curl 0.90 N m, F_ax curl -4.84 N | tau_sh 3.59 N m, index 0.294 N m/kg^(2/3)
+age 14: l_h 0.446 m, l_ua 0.344 m, M_b 54.0 kg | M_s hold 1.97 N m, curl 0.98 N m, F_ax curl -4.84 N | tau_sh 3.89 N m, index 0.272 N m/kg^(2/3)
+age 16: l_h 0.474 m, l_ua 0.368 m, M_b 67.3 kg | M_s hold 2.09 N m, curl 1.05 N m, F_ax curl -4.84 N | tau_sh 4.15 N m, index 0.251 N m/kg^(2/3)
+girls age 4: l_h 0.275 m, l_ua 0.211 m, M_b 17.2 kg
+girls age 10: l_h 0.374 m, l_ua 0.292 m, M_b 35.1 kg
+girls age 16: l_h 0.428 m, l_ua 0.338 m, M_b 56.3 kg
+
+Figures written to C:\Users\naadh\OneDrive\Desktop\College Files\Projects\SCUDEM\Finalization\figures

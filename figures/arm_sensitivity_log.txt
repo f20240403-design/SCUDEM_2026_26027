@@ -1,0 +1,57 @@
+S1: one-at-a-time sensitivity of T* (months) at a0 = 10
+  boys: central T* = 19.3 months
+    Gamma (tightness tolerance)                  19.3 to   19.3  (swing 0.0)
+    delta_0 (distal clearance, cm)               12.3 to   27.6  (swing 15.3)
+    rho (residual/intact length)                 27.6 to   19.3  (swing 8.3)
+    DeltaL_max (arm, cm)                         13.2 to   19.3  (swing 6.1)
+    m_o (object, kg)                             19.5 to   18.7  (swing 0.8)
+    m_p (prosthesis, kg)                         19.5 to   19.3  (swing 0.2)
+    k_s (liner stiffness, N/cm)                  17.4 to   19.7  (swing 2.3)
+    r_Lambda (forearm length rate, +-2 SE)       19.8 to   18.8  (swing 1.1)
+    r_C (circumference rate, +-2 SE)             19.3 to   19.3  (swing 0.0)
+    K (adult size: 10% cap vs largest mean)      21.3 to   19.3  (swing 2.1)
+  girls: central T* = 25.1 months
+    Gamma (tightness tolerance)                  25.1 to   25.1  (swing 0.0)
+    delta_0 (distal clearance, cm)               15.8 to   36.8  (swing 21.0)
+    rho (residual/intact length)                 36.8 to   25.1  (swing 11.6)
+    DeltaL_max (arm, cm)                         16.9 to   25.1  (swing 8.2)
+    m_o (object, kg)                             25.5 to   24.4  (swing 1.1)
+    m_p (prosthesis, kg)                         25.4 to   25.1  (swing 0.2)
+    k_s (liner stiffness, N/cm)                  22.6 to   25.8  (swing 3.1)
+    r_Lambda (forearm length rate, +-2 SE)       25.7 to   24.9  (swing 0.8)
+    r_C (circumference rate, +-2 SE)             25.1 to   25.1  (swing 0.0)
+    K (adult size: 10% cap vs largest mean)      28.0 to   25.1  (swing 2.8)
+
+S2: child-to-child spread of T* (months), central constants: 10th / median / 90th percentile
+  boys a0  4: 4.9 / 9.9 / 18.7
+  boys a0  6: 5.1 / 10.2 / 19.6
+  boys a0  8: 5.4 / 11.1 / 21.5
+  boys a0 10: 6.1 / 12.6 / 24.7
+  boys a0 12: 7.2 / 14.9 / 29.9
+  boys a0 14: 8.8 / 18.4 / 37.8
+  boys a0 16: 11.1 / 23.6 / 50.5
+  girls a0  4: 5.4 / 10.9 / 20.8
+  girls a0  6: 5.8 / 11.8 / 22.9
+  girls a0  8: 6.6 / 13.5 / 26.6
+  girls a0 10: 7.8 / 16.2 / 32.8
+  girls a0 12: 9.6 / 20.3 / 42.7
+  girls a0 14: 12.3 / 26.8 / 59.9
+  girls a0 16: 16.4 / 36.9 / 93.9
+
+S3: central T* (months), single logistic vs two-phase growth
+  a0  4: boys 14.9 -> 14.0 | girls 16.5 -> 18.7
+  a0  6: boys 15.5 -> 17.1 | girls 18.0 -> 23.5
+  a0  8: boys 16.9 -> 21.1 | girls 20.7 -> 18.1
+  a0 10: boys 19.3 -> 20.4 | girls 25.1 -> 16.3
+  a0 12: boys 23.1 -> 16.1 | girls 32.3 -> 40.9
+  a0 14: boys 28.9 -> 19.6 | girls 43.8 -> Inf
+  a0 16: boys 38.0 -> Inf | girls 64.2 -> Inf
+
+S4: rho = 0.94 (delta0/rho = 1.60 cm)
+  a0  4: boys 15.9 (clearance) | girls 17.7 (clearance)
+  a0  6: boys 16.5 (clearance) | girls 19.2 (clearance)
+  a0  8: boys 18.0 (clearance) | girls 22.2 (clearance)
+  a0 10: boys 20.6 (clearance) | girls 27.0 (clearance)
+  a0 12: boys 24.8 (clearance) | girls 34.8 (clearance)
+  a0 14: boys 31.2 (clearance) | girls 47.7 (clearance)
+  a0 16: boys 41.1 (clearance) | girls 71.0 (clearance)

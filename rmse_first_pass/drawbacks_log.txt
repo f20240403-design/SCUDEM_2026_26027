@@ -1,0 +1,38 @@
+Addressing drawbacks (2026-11-04 23:20)
+
+Observed at 25 months (TT): any problem 0.806, tight 0.539, short 0.266
+
+D1: competing-risks sweep (Gamma x dr x dL x sigma)...
+  grid best: Gamma 0.121 dr 5.16 dL 4.91 sigma 1.00 -> stacked RMSE 0.0143 (498 s)
+  iter 1: stacked RMSE 0.01396 (ratio 0.978745)
+  iter 2: stacked RMSE 0.01378 (ratio 0.986806)
+  iter 3: stacked RMSE 0.01347 (ratio 0.977475)
+  iter 4: stacked RMSE 0.01347 (ratio 1.000000)
+  CR constants: Gamma 0.1235, delta0/rho 4.625 cm, DeltaL_max 4.624 cm, sigma 0.975
+  TT: survival RMSE 0.0198 (R2 0.9947); CIF tight RMSE 0.0156; CIF short RMSE 0.0109
+  KD+TF held out: survival RMSE 0.0346 (R2 0.9820); CIF tight 0.1238; CIF short 0.1404
+  model first-cause shares within 25 mo: tightness 35%, clearance 32%, length 33%
+  observed (TT, both split 50/50): tight 67%, short 33%
+  timing-only constants on causes: survival RMSE 0.0165; CIF tight 0.1733, CIF short 0.1721; shares 21/79/0% (exact tie clearance=length)
+  both -> 0% tight: Gamma 0.1408, dr 5.233, dL 3.667, sigma 0.966, stacked RMSE 0.0187
+  both -> 50% tight: Gamma 0.1235, dr 4.625, dL 4.624, sigma 0.975, stacked RMSE 0.0135
+  both -> 100% tight: Gamma 0.1032, dr 4.006, dL 5.779, sigma 0.938, stacked RMSE 0.0126
+
+D2: benchmarks (exponential mean 17.4 mo; Weibull scale 16.5 mo, shape 1.35)
+                     model                     constants    RMSE_TT      R2_TT     max_abs_dev_TT    share_of_months_inside_95pct_band    RMSE_KDTF_heldout    R2_KDTF_heldout
+    _______________________________________    _________    ________    _______    ______________    _________________________________    _________________    _______________
+
+    "Exponential (1 constant)"                     1        0.059573    0.95192        0.14408                    0.76923                     0.079378             0.90489    
+    "Weibull (2 constants)"                        2        0.035343    0.98308       0.075108                    0.84615                     0.048141             0.96502    
+    "Growth model, timing fit (3)"                 3        0.016463    0.99633       0.035155                    0.96154                     0.029317             0.98703    
+    "Growth model, competing-risks fit (4)"        4        0.019845    0.99466       0.056774                    0.92308                     0.034559             0.98197    
+
+
+D3: bi-logistic (two-phase) fits
+  forearm_length_radiale_stylion male: wRMSE single 0.39 -> two-phase 0.16 cm; largest residual 0.55 cm; spurt centre 13.6 yr
+  forearm_length_radiale_stylion female: wRMSE single 0.41 -> two-phase 0.20 cm; largest residual 0.66 cm; spurt centre 10.4 yr
+  forearm_circumference male: wRMSE single 0.87 -> two-phase 0.16 cm; largest residual 0.31 cm; spurt centre 14.6 yr
+  forearm_circumference female: wRMSE single 0.37 -> two-phase 0.16 cm; largest residual 0.36 cm; spurt centre 9.7 yr
+
+Done. Results in C:\Users\naadh\OneDrive\Desktop\College Files\Projects\SCUDEM\Finalization\RMSE\results
+exit 0

@@ -1,0 +1,22 @@
+# MATLAB autosave and editor files
+*.asv
+*.m~
+# Python
+__pycache__/
+*.pyc
+# LaTeX build products (the report is compiled on Overleaf)
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+# Office lock files and OS clutter
+~$*
+.~lock.*
+Thumbs.db
+desktop.ini
+.DS_Store
+# keep the run logs of the study (they are part of the record)
+!final_study/results/**/progress.log

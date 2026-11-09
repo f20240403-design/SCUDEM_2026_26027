@@ -1,0 +1,46 @@
+Sweep of the missing constants, target R^2 = 0.9999 (2026-11-04 22:15)
+
+R^2 = 0.9999 on the TT curve needs RMSE <= 0.0027 (current calibration: 0.0165; noise floor: 0.032)
+
+Part A: rho x delta0 x DeltaL_max = 9 x 4 x 6 sweep (Gamma, sigma re-fitted each time)...
+  done in 132 s
+  best: rho 1.0, delta0 3.0 cm, DeltaL_max 2.5 cm -> R^2 0.99637 (RMSE 0.0164)
+  R^2 range over the whole sweep: -0.7541 to 0.9964
+    rho = 0.2: best R^2 0.99619
+    rho = 0.3: best R^2 0.99630
+    rho = 0.4: best R^2 0.99619
+    rho = 0.5: best R^2 0.99629
+    rho = 0.6: best R^2 0.99630
+    rho = 0.7: best R^2 0.99630
+    rho = 0.8: best R^2 0.99628
+    rho = 0.9: best R^2 0.99630
+    rho = 1.0: best R^2 0.99637
+
+Part B: l_p and the arm DeltaL_max appear only in the arm statics (eq. 12) and the arm length criterion.
+  The casefiles are leg data and the leg run uses u_lift = 0, so both have zero effect on the leg R^2:
+  no sweep against these data can determine them.
+
+Part C: 7-constant flexible model, multistart Nelder-Mead
+  iter 0: RMSE 0.01594, R^2 0.99656
+  iter 1: RMSE 0.01580, R^2 0.99662
+  iter 2: RMSE 0.01564, R^2 0.99669
+  iter 3: RMSE 0.01562, R^2 0.99669
+  iter 4: RMSE 0.01558, R^2 0.99671
+  iter 5: RMSE 0.01557, R^2 0.99672
+  iter 6: RMSE 0.01554, R^2 0.99673
+  iter 7: RMSE 0.01552, R^2 0.99673
+  iter 8: RMSE 0.01550, R^2 0.99675
+  iter 9: RMSE 0.01549, R^2 0.99675
+
+Flexible constants: Gamma 0.2581, delta0/rho 8.228 cm, DeltaL_max 0.977 cm, sigma_c 0.019, sigma_l 0.689, delay 0.90 mo, a0 shift 4.46 yr
+                      model                       free_constants    RMSE_TT      R2_TT     RMSE_KDTF_heldout    R2_KDTF_heldout
+    __________________________________________    ______________    ________    _______    _________________    _______________
+
+    "Base, 3 constants (run_rmse_calibration)"           3          0.016463    0.99633        0.029317             0.98703    
+    "Flexible, 7 constants"                              7          0.015494    0.99675        0.028245             0.98796    
+    "Noise floor (TT bootstrap median)"                NaN          0.032378        NaN             NaN                 NaN    
+
+Target R^2 0.9999 reached: false
+
+Results written to C:\Users\naadh\OneDrive\Desktop\College Files\Projects\SCUDEM\Finalization\RMSE\results
+exit 0

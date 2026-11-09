@@ -1,0 +1,170 @@
+SCUDEM XI 2026 Problem A - overnight RMSE study
+Finished 05-Nov-2026 00:16:36 after 1.7 minutes
+
+Episodes: TT 188 (32 children), KD+TF 85 (27 children)
+Monte Carlo draws per episode: fit 60, final 200
+
+FINAL CONSTANTS (estimate; child-bootstrap 2.5/50/97.5%; growth-bootstrap 2.5/50/97.5%)
+  Gamma                  0.0661 |   0.0474   0.0642   0.1164 |   0.0652   0.0664   0.0674
+  delta0_over_rho_cm     3.2035 |   2.6054   3.1970   5.0109 |   3.1808   3.2194   3.2739
+  DeltaLmax_leg_cm       2.6951 |   2.1262   2.8625   3.8229 |   2.6189   2.6805   2.7154
+  sigma                  0.7650 |   0.5724   0.7768   0.8604 |   0.7655   0.7700   0.7817
+  delay_yr               0.0014 |   0.0005   0.0014   0.0021 |   0.0014   0.0014   0.0014
+
+METRICS
+              <strong>set</strong>                <strong>RMSE_S</strong>      <strong>R2_S</strong>      <strong>RMSE_tight</strong>    <strong>RMSE_short</strong>    <strong>RMSE_stacked</strong>    <strong>C_index</strong>      <strong>IBS</strong>      <strong>IBS_null</strong>    <strong>Brier_skill</strong>
+    <strong>________________________</strong>    <strong>________</strong>    <strong>_______</strong>    <strong>__________</strong>    <strong>__________</strong>    <strong>____________</strong>    <strong>_______</strong>    <strong>_______</strong>    <strong>________</strong>    <strong>___________</strong>
+
+    "TT calibration"            0.014721    0.99706     0.021506        0.0169       0.017933      0.58516     0.1853    0.17745      -0.044212 
+    "KD+TF held out"            0.026005    0.98979      0.14356       0.12699        0.11167      0.65023    0.15561    0.16561       0.060336 
+    "TT leave-one-child-out"    0.016552    0.99629     0.016519      0.011194       0.014968      0.57122    0.19111    0.17745      -0.076997 
+
+
+Cause shares of first problems (TT, model): tightness 0.42, clearance 0.24, length 0.35
+
+NOISE FLOOR (child-level bootstrap of the observed curves)
+      <strong>curve</strong>           <strong>noise_floor_2p5_50_97p5</strong>     
+    <strong>__________</strong>    <strong>________________________________</strong>
+
+    "survival"    0.018214    0.034916    0.087697
+    "tight"       0.015088    0.035614    0.073114
+    "short"       0.011706    0.022231    0.050807
+    "stacked"     0.018807    0.033968    0.065238
+
+
+
+VARIANTS
+         <strong>variant</strong>          <strong>RMSE_S_TT</strong>    <strong>RMSE_S_HO</strong>    <strong>RMSE_stack_TT</strong>     <strong>C_TT</strong>       <strong>C_HO</strong>      <strong>IBS_TT</strong>     <strong>IBS_HO</strong>     <strong>n_boot</strong>
+    <strong>__________________</strong>    <strong>_________</strong>    <strong>_________</strong>    <strong>_____________</strong>    <strong>_______</strong>    <strong>_______</strong>    <strong>_______</strong>    <strong>_______</strong>    <strong>______</strong>
+
+    "primary"             0.018234      0.01768       0.016147        0.5811    0.63333    0.18404    0.15954      10  
+    "timing_only"         0.015572     0.020852        0.13892       0.57726    0.63288     0.1911    0.16384      10  
+    "standin_ages"        0.016804     0.024994       0.015679       0.51646     0.3726    0.17756    0.17164      10  
+    "known_age_only"      0.021567     0.024338       0.019617       0.60792     0.6379    0.15348    0.15676      10  
+    "socket_spread"       0.015157     0.019145       0.014477       0.57693    0.62374    0.18382    0.16092      10  
+    "two_phase_growth"    0.020111     0.039248       0.018473       0.57507    0.63105    0.18916    0.16137      10  
+    "nhanes_circ"         0.017705     0.024199       0.013725       0.57644    0.63699    0.19867    0.17048      10  
+    "anatomical_KD_TF"    0.016275      0.16541       0.015741       0.57166     0.6516    0.18644     0.1855      10  
+    "no_delay"            0.014799      0.02069       0.014344       0.57792    0.63196    0.18251     0.1642      10  
+    "gamma_unbounded"     0.015087      0.01959       0.014296       0.57978    0.63105    0.18627    0.15839      10  
+
+
+
+GROWTH FITS (individual records)
+         <strong>curve</strong>            <strong>sex</strong>         <strong>K</strong>          <strong>r</strong>         <strong>a50</strong>       <strong>wRMSE_logistic</strong>    <strong>maxres_logistic</strong>    <strong>K_at_cap</strong>    <strong>wRMSE_twophase</strong>    <strong>spurt_centre</strong>    <strong>n_children</strong>
+    <strong>________________</strong>    <strong>________</strong>    <strong>______</strong>    <strong>_______</strong>    <strong>________</strong>    <strong>______________</strong>    <strong>_______________</strong>    <strong>________</strong>    <strong>______________</strong>    <strong>____________</strong>    <strong>__________</strong>
+
+    "forearm_length"    "male"      29.672      0.156      4.1513       0.38986            0.83258         true          0.16973           13.589           629   
+    "forearm_length"    "female"    25.823    0.16615      2.6808       0.41369             1.2807         true          0.19317           10.323           612   
+    "forearm_circ"      "male"      31.008    0.10776      3.5648       0.88885             2.4494         true          0.15264           14.804          1945   
+    "forearm_circ"      "female"    25.569    0.12526    0.065933       0.35836            0.66744         true          0.14767           10.447          1882   
+    "shank_length"      "male"      42.919    0.18392      4.6695       0.32106             1.0781         false         0.27766           13.203           597   
+    "shank_length"      "female"    38.413    0.21195      3.3798       0.48062             1.4211         false         0.14095           9.5254           581   
+    "calf_circ"         "male"      41.114    0.12618      3.6274       0.78619             1.8499         true          0.27814           12.424          1946   
+    "calf_circ"         "female"    37.302    0.14333      2.1478       0.58621             1.1092         true          0.20143           10.581          1881   
+    "thigh_length"      "male"      49.439    0.17107      4.9807       0.51762             1.0517         true          0.31782           13.188           624   
+    "thigh_length"      "female"    41.677    0.24417      3.2977       0.62336              1.726         false         0.32867            10.18           609   
+    "thigh_circ"        "male"      62.623    0.13135      4.5928        1.0428             3.2005         true          0.34695           13.195          1908   
+    "thigh_circ"        "female"    60.009     0.1568      3.5116       0.96031             1.8101         true           0.3904           11.586          1879   
+    "leg_length"        "male"       91.85     0.1784      4.7676       0.69984             1.7013         true          0.42183           13.127           596   
+    "leg_length"        "female"    80.176    0.22536      3.3371        1.0304             3.1766         false         0.39768           9.8397           580   
+
+
+
+ARM PREDICTION (months)
+      <strong>sex</strong>       <strong>a0</strong>    <strong>T_mean_tolerance</strong>    <strong>T_median_child</strong>    <strong>median_child_CI_lo</strong>    <strong>median_child_CI_hi</strong>    <strong>pred_p5</strong>    <strong>pred_p10</strong>    <strong>pred_p25</strong>    <strong>pred_p50</strong>    <strong>pred_p75</strong>    <strong>pred_p90</strong>    <strong>pred_p95</strong>    <strong>share_never</strong>
+    <strong>________</strong>    <strong>__</strong>    <strong>________________</strong>    <strong>______________</strong>    <strong>__________________</strong>    <strong>__________________</strong>    <strong>_______</strong>    <strong>________</strong>    <strong>________</strong>    <strong>________</strong>    <strong>________</strong>    <strong>________</strong>    <strong>________</strong>    <strong>___________</strong>
+
+    "male"       3         14.272             6.4556              5.5088                7.3563          2.2861      3.1129      4.7053      7.1374      10.377      14.998      18.612            0   
+    "male"       4         14.917             6.6495              5.5585                 7.617          2.4687      3.1612      4.8522      7.0666      10.609      14.821      18.337            0   
+    "male"       5         15.096              6.888              5.6767                8.1355          2.5315       3.254      5.0677      7.6061      11.303      16.072      20.215            0   
+    "male"       6         15.467             7.1193              6.0217                8.3724          2.5834      3.2512      5.1334      7.8275       11.63      16.377      20.296            0   
+    "male"       7         16.046             7.3721              6.1303                8.5748           2.803      3.6619       5.481      8.2403      12.273      17.331      20.876            0   
+    "male"       8         16.852             7.7251               6.445                9.2661          2.8979      3.8475      5.7353      8.6618      13.011      18.338      22.502            0   
+    "male"       9         17.915             8.4186              6.9351                9.8541          3.1168      4.0556      6.0769      9.4291      14.028      19.812      23.767            0   
+    "male"      10         19.273             8.7823              7.4377                10.264          3.4219      4.4487      6.6449      10.048      15.278      21.543      28.033            0   
+    "male"      11         20.976             9.5049              8.0758                11.259           3.672      4.7358      7.0654      10.983      16.548      23.027      29.555            0   
+    "male"      12         23.092             10.373              8.8288                12.206          3.9073      4.9782       7.496      11.914      17.523      25.942      31.522            0   
+    "male"      13         25.708             11.114              9.6493                  13.3          4.1707      5.2294       8.136      12.888      19.226      28.328      34.374            0   
+    "male"      14         28.943             12.558              10.486                 14.82          4.5518      5.9226      9.2252      14.281      22.152       33.43      42.394            0   
+    "male"      15          32.96             13.691              11.691                16.899          5.0433      6.6109      10.372      15.617      23.957       35.82      46.297            0   
+    "male"      16         37.988             15.255                12.4                 18.76          5.6094      7.4408      11.176      16.984      26.617      39.553      53.272            0   
+    "male"      17         43.864              17.43              14.839                22.142          6.4334      8.3073      12.369      19.366       30.31      45.881      60.222       0.0005   
+    "female"     3         15.735             7.1175              5.8803                8.5074          2.6544      3.3808      5.0149      7.6058      11.702      16.837      20.312            0   
+    "female"     4         16.526             7.3235              6.0278                8.8961          2.8409      3.5397      5.3292      8.1107       11.98      17.274       20.93            0   
+    "female"     5         17.116             7.8056              6.6494                9.5033          2.7999      3.7719      5.7337      8.5297      13.101      18.568      22.914            0   
+    "female"     6          17.98             8.2812               6.859                9.6499          3.1629      4.0979      6.1267      9.3587      13.805      19.696      23.598            0   
+    "female"     7         19.155             8.9364              7.5497                10.396            3.28      4.2773      6.4996      9.6723      14.957       21.37      26.171            0   
+    "female"     8         20.691             9.5999              7.8817                 11.25           3.528      4.4245      6.7893      10.451      15.535      22.175      27.473            0   
+    "female"     9         22.656             10.359              8.8176                12.229          3.8463      4.9816      7.4433      11.829       17.95      25.502      31.008            0   
+    "female"    10         25.145             11.592              9.2481                13.695          4.2437      5.3585      8.1718      12.446      19.107      28.849      37.387            0   
+    "female"    11         28.284             12.976              9.9507                14.653          4.4411        5.92      8.9557      14.085      22.021      33.044      40.731       0.0005   
+    "female"    12         32.254             14.361              11.471                16.557          5.0387      6.6269      10.234      16.398       25.43      37.272      46.487       0.0015   
+    "female"    13         37.311             16.626              12.216                19.655           5.669      7.4484      11.145      17.518       27.35      42.073      54.337       0.0015   
+    "female"    14         43.843             18.714              13.964                21.934          6.6192      8.5535      12.914      20.377      31.988      49.806      67.207       0.0015   
+    "female"    15         52.467             21.246              15.484                 26.44          7.1263      9.3694      14.876      23.962      38.734      61.238      82.471        0.006   
+    "female"    16         64.247             24.636              19.181                28.784          8.1253      10.689      17.535      27.269      42.763      70.575      100.95        0.009   
+    "female"    17         81.265             28.782              21.255                34.002          10.016      13.149      20.075      31.757      52.643      89.588      131.49       0.0135   
+
+
+
+SOBOL (total indices)
+      <strong>sex</strong>       <strong>a0</strong>           <strong>input</strong>              <strong>S_first</strong>       <strong>S_total</strong>  
+    <strong>________</strong>    <strong>__</strong>    <strong>____________________</strong>    <strong>___________</strong>    <strong>__________</strong>
+
+    "male"       6    "Gamma"                     0.59057        0.4908
+    "male"       6    "delta0"                 -0.0054802       0.17158
+    "male"       6    "rho"                      0.065394       0.06709
+    "male"       6    "DeltaLmax_arm"             0.30149       0.46875
+    "male"       6    "m_p"                     0.0024769    5.6663e-05
+    "male"       6    "m_o"                    -0.0042802     0.0013205
+    "male"       6    "k_s"                    -0.0041772     0.0051508
+    "male"       6    "growth_length_draw"     -0.0068801     0.0023947
+    "male"       6    "growth_circ_draw"       -0.0046844     0.0024503
+    "male"      10    "Gamma"                     0.07564       0.39713
+    "male"      10    "delta0"                    0.20908       0.33128
+    "male"      10    "rho"                      0.051057      0.064052
+    "male"      10    "DeltaLmax_arm"             0.46827       0.62047
+    "male"      10    "m_p"                    0.00082324    5.8274e-05
+    "male"      10    "m_o"                      0.010407     0.0016715
+    "male"      10    "k_s"                     0.0061408     0.0040972
+    "male"      10    "growth_length_draw"      0.0028471     0.0014444
+    "male"      10    "growth_circ_draw"        0.0016014     0.0017797
+    "male"      14    "Gamma"                    0.057639       0.45445
+    "male"      14    "delta0"                    0.23664       0.22605
+    "male"      14    "rho"                     -0.033163      0.082777
+    "male"      14    "DeltaLmax_arm"             0.45337       0.69477
+    "male"      14    "m_p"                    -0.0024104    7.0435e-05
+    "male"      14    "m_o"                    -0.0020603      0.001552
+    "male"      14    "k_s"                    -0.0061027     0.0054724
+    "male"      14    "growth_length_draw"       0.035348     0.0069911
+    "male"      14    "growth_circ_draw"        0.0027799     0.0017574
+    "female"     6    "Gamma"                     0.53027       0.41101
+    "female"     6    "delta0"                    0.15658       0.20842
+    "female"     6    "rho"                      0.084313      0.073092
+    "female"     6    "DeltaLmax_arm"             0.72994       0.53742
+    "female"     6    "m_p"                    0.00073399    3.9521e-05
+    "female"     6    "m_o"                     0.0035006    0.00093758
+    "female"     6    "k_s"                     0.0014392      0.003343
+    "female"     6    "growth_length_draw"    -7.7249e-05     0.0029687
+    "female"     6    "growth_circ_draw"       -0.0077155     0.0012551
+    "female"    10    "Gamma"                     0.30266       0.41738
+    "female"    10    "delta0"                    0.10865       0.26613
+    "female"    10    "rho"                      0.043906        0.1007
+    "female"    10    "DeltaLmax_arm"             0.30794       0.62684
+    "female"    10    "m_p"                     0.0022785    8.9833e-05
+    "female"    10    "m_o"                      0.011255     0.0014287
+    "female"    10    "k_s"                      0.014476     0.0049917
+    "female"    10    "growth_length_draw"       0.042623      0.014113
+    "female"    10    "growth_circ_draw"       -0.0053053     0.0010717
+    "female"    14    "Gamma"                     0.22388        0.4993
+    "female"    14    "delta0"                  -0.045379       0.30075
+    "female"    14    "rho"                      0.051304      0.079788
+    "female"    14    "DeltaLmax_arm"             0.12926       0.55476
+    "female"    14    "m_p"                    -0.0013494    5.8701e-05
+    "female"    14    "m_o"                   -0.00015548     0.0017847
+    "female"    14    "k_s"                    -0.0027762     0.0056862
+    "female"    14    "growth_length_draw"        0.01308      0.047907
+    "female"    14    "growth_circ_draw"          0.01932     0.0059023
+
+

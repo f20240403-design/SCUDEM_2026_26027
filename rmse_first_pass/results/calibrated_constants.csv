@@ -1,0 +1,4 @@
+constant,calibrated_value,unit,literature_range,inside_literature_range
+"Gamma = (1+s_C)(1+eps_max)-1",0.121327497985248,fraction,0.005-0.26 (typ. 0.065-0.090),inside
+"lambda = min(delta0/rho, DeltaL_max)",1.94838208431942,cm,0.5-2.0 (typ. 0.8-1.2),inside
+"sigma (child-to-child spread)",0.764872769150167,log-SD,none (calibrated only),n/a

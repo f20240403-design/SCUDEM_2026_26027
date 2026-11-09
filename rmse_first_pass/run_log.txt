@@ -1,0 +1,46 @@
+SCUDEM Problem A: RMSE calibration (2026-11-04 22:02)
+
+Episodes: TT 188 (102 events), KD+TF 85 (53 events). Ages at amputation: n = 45, 10.1 +/- 4.5 yr
+Grid: TT 0-25 months, KD+TF 0-18 months
+KM median (TT): 11.8 months
+
+Noise floor (bootstrap KM vs KM, TT): RMSE median 0.0324 [95%: 0.0154-0.0736], R^2 median 0.9858
+
+Stage 1: sweeping 40 x 39 x 11 = 17160 parameter sets...
+  done in 60 s
+  best grid point: Gamma = 0.0945, lambda = 2.300 cm, sigma = 0.80 -> RMSE 0.0169
+
+Stage 2: Nelder-Mead refinement, convergence when RMSE_new/RMSE_old >= 0.9999
+  iter  1: Gamma 0.1051  lambda 2.084  sigma 0.775  RMSE 0.01651  ratio 0.976901
+  iter  2: Gamma 0.1213  lambda 1.948  sigma 0.765  RMSE 0.01646  ratio 0.997169
+  iter  3: Gamma 0.1213  lambda 1.948  sigma 0.765  RMSE 0.01646  ratio 1.000000
+
+Calibrated (TT): RMSE 0.0165, R^2 0.9963
+Held out (KD+TF): RMSE 0.0293, R^2 0.9870
+
+Variant sigma = 0: Gamma 0.1443, lambda 1.289 -> RMSE TT 0.0926, R^2 0.8839
+Variant refit on KD+TF: Gamma 0.0983, lambda 1.628, sigma 0.622 -> RMSE 0.0188
+Variant a0 = amputation age + 0 yr: Gamma 0.1213, lambda 1.948, sigma 0.765 -> RMSE TT 0.0165, KD+TF 0.0293
+Variant a0 = amputation age + 1 yr: Gamma 0.1790, lambda 1.443, sigma 0.632 -> RMSE TT 0.0155, KD+TF 0.0272
+Variant a0 = amputation age + 2 yr: Gamma 0.0696, lambda 1.898, sigma 0.754 -> RMSE TT 0.0163, KD+TF 0.0294
+Variant a0 = amputation age + 3 yr: Gamma 0.1634, lambda 1.145, sigma 0.571 -> RMSE TT 0.0155, KD+TF 0.0281
+
+Cause of first problem within 25 months: model 21% tightness / 79% length-clearance;
+  casefiles (TT): tight 55, short 20, both 23  (80% involve tightness)
+
+Literature check:
+  Gamma  = 0.1213  (lit. 0.005-0.26, typical 0.065-0.090)  -> inside
+  lambda = 1.948 cm (lit. 0.5-2.0, typical 0.8-1.2)  -> inside
+  Implied rho if clearance sets lambda: delta0 0.5-3 cm -> rho = 0.26-1.54
+                 comparison                 episodes    grid_end_month      RMSE        R2   
+    ____________________________________    ________    ______________    ________    _______
+
+    "TT (calibration)"                        188             25          0.016463    0.99633
+    "KD+TF (held out)"                         85             18          0.029317    0.98703
+    "TT, sigma = 0"                           188             25          0.092584    0.88387
+    "KD+TF refit (reference)"                  85             18          0.018782    0.99468
+    "Noise floor, TT bootstrap (median)"      188             25          0.032378     0.9858
+
+
+Results written to C:\Users\naadh\OneDrive\Desktop\College Files\Projects\SCUDEM\Finalization\RMSE\results
+exit 0

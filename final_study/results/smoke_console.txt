@@ -1,0 +1,51 @@
+[00:14:53 |    0.0 min] ==== overnight_rmse(smoke) started 2026-11-05 00:14:53 ====
+[00:14:53 |    0.0 min] config: {"workers":10,"resume":true,"batch":10,"perturb":0.08,"locoStarts":3,"M":60,"Mboot":40,"Mfinal":200,"Bg":20,"Bgp":10,"B":20,"Bvar":10,"nG":5,"nD":5,"nL":5,"nS":3,"delays":[0,1],"nTop":4,"refineEvals":150,"bootEvals":80,"maxRounds":2,"budget":[60,60,60,120,120,300,60,60],"Narm":2000,"Nsobol":512,"armBoot":20}
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 10 workers.
+[00:15:25 |    0.5 min] parallel pool: 10 workers
+[00:15:28 |    0.6 min] episodes: TT 188 (32 children, 125 with known age), held-out KD+TF 85 (27 children)
+[00:15:29 |    0.6 min] S0 point fits done (2 s)
+         curve            sex         K          r         a50       wRMSE_logistic    maxres_logistic    K_at_cap    wRMSE_twophase    spurt_centre    n_children
+    ________________    ________    ______    _______    ________    ______________    _______________    ________    ______________    ____________    __________
+
+    "forearm_length"    "male"      29.672      0.156      4.1513       0.38986            0.83258         true          0.16973           13.589           629   
+    "forearm_length"    "female"    25.823    0.16615      2.6808       0.41369             1.2807         true          0.19317           10.323           612   
+    "forearm_circ"      "male"      31.008    0.10776      3.5648       0.88885             2.4494         true          0.15264           14.804          1945   
+    "forearm_circ"      "female"    25.569    0.12526    0.065933       0.35836            0.66744         true          0.14767           10.447          1882   
+    "shank_length"      "male"      42.919    0.18392      4.6695       0.32106             1.0781         false         0.27766           13.203           597   
+    "shank_length"      "female"    38.413    0.21195      3.3798       0.48062             1.4211         false         0.14095           9.5254           581   
+    "calf_circ"         "male"      41.114    0.12618      3.6274       0.78619             1.8499         true          0.27814           12.424          1946   
+    "calf_circ"         "female"    37.302    0.14333      2.1478       0.58621             1.1092         true          0.20143           10.581          1881   
+    "thigh_length"      "male"      49.439    0.17107      4.9807       0.51762             1.0517         true          0.31782           13.188           624   
+    "thigh_length"      "female"    41.677    0.24417      3.2977       0.62336              1.726         false         0.32867            10.18           609   
+    "thigh_circ"        "male"      62.623    0.13135      4.5928        1.0428             3.2005         true          0.34695           13.195          1908   
+    "thigh_circ"        "female"    60.009     0.1568      3.5116       0.96031             1.8101         true           0.3904           11.586          1879   
+    "leg_length"        "male"       91.85     0.1784      4.7676       0.69984             1.7013         true          0.42183           13.127           596   
+    "leg_length"        "female"    80.176    0.22536      3.3371        1.0304             3.1766         false         0.39768           9.8397           580   
+
+[00:15:32 |    0.6 min] S0 growth bootstrap: 20 resamples (4 s)
+[00:15:32 |    0.7 min] one objective evaluation: 19.5 ms (M = 60 draws per episode)
+[00:15:32 |    0.7 min] S1 sweep: 750 parameter sets
+[00:15:33 |    0.7 min] S1 done (1 s)
+[00:15:33 |    0.7 min] S1 best grid point: [0.1591 10 8 1.4 1] -> stacked RMSE 0.05011
+[00:15:34 |    0.7 min] S2 multistart best: [0.066311 3.2259 2.7046 0.76899 0.0014402] -> 0.01256
+[00:15:36 |    0.7 min] S2 round 1: RMSE 0.012544 ratio 0.998875 theta [0.066052 3.2031 2.6945 0.76487 0.0013924]
+[00:15:38 |    0.7 min] S2 round 2: RMSE 0.012541 ratio 0.999753 theta [0.066067 3.2035 2.6951 0.765 0.0013963]
+[00:15:39 |    0.8 min] S3 bootstrap 10/20 (1 s)
+[00:15:40 |    0.8 min] S3 bootstrap 20/20 (2 s)
+[00:15:55 |    1.0 min] S4 LOCO: out-of-fold RMSE_S 0.0166 C 0.571 IBS 0.1911 (null 0.1775) | in-sample RMSE_S 0.0145 C 0.591 (16 s)
+[00:15:58 |    1.1 min] S5 variant 1 primary                RMSE_S TT 0.0182 HO 0.0177 | stack TT 0.0161 | C TT 0.581 HO 0.633 | theta [0.06551 3.345 2.851 0.7534 0.001352] (10 boot, 2 s)
+[00:16:00 |    1.1 min] S5 variant 2 timing_only            RMSE_S TT 0.0156 HO 0.0209 | stack TT 0.1389 | C TT 0.577 HO 0.633 | theta [0.0669 1.374 6.248 0.6209 0.6631] (10 boot, 2 s)
+[00:16:02 |    1.2 min] S5 variant 3 standin_ages           RMSE_S TT 0.0168 HO 0.0250 | stack TT 0.0157 | C TT 0.516 HO 0.373 | theta [0.1144 3.567 3.963 0.8888 0.0001022] (10 boot, 2 s)
+[00:16:04 |    1.2 min] S5 variant 4 known_age_only         RMSE_S TT 0.0216 HO 0.0243 | stack TT 0.0196 | C TT 0.608 HO 0.638 | theta [0.07975 2.217 2.51 0.7302 1.002] (10 boot, 2 s)
+[00:16:06 |    1.2 min] S5 variant 5 socket_spread          RMSE_S TT 0.0152 HO 0.0191 | stack TT 0.0145 | C TT 0.577 HO 0.624 | theta [0.0661 3.217 2.761 0.7641 0.001409] (10 boot, 2 s)
+[00:16:08 |    1.3 min] S5 variant 6 two_phase_growth       RMSE_S TT 0.0201 HO 0.0392 | stack TT 0.0185 | C TT 0.575 HO 0.631 | theta [0.06653 3.211 2.722 0.7665 0.001392] (10 boot, 2 s)
+[00:16:11 |    1.3 min] S5 variant 7 nhanes_circ            RMSE_S TT 0.0177 HO 0.0242 | stack TT 0.0137 | C TT 0.576 HO 0.637 | theta [0.08516 1.835 1.916 0.5326 0.001484] (10 boot, 2 s)
+[00:16:13 |    1.3 min] S5 variant 8 anatomical_KD_TF       RMSE_S TT 0.0163 HO 0.1654 | stack TT 0.0157 | C TT 0.572 HO 0.652 | theta [0.07645 2.467 2.566 0.7458 0.01876] (10 boot, 2 s)
+[00:16:14 |    1.3 min] S5 variant 9 no_delay               RMSE_S TT 0.0148 HO 0.0207 | stack TT 0.0143 | C TT 0.578 HO 0.632 | theta [0.06731 3.284 2.696 0.7689 0] (10 boot, 1 s)
+[00:16:16 |    1.4 min] S5 variant 10 gamma_unbounded        RMSE_S TT 0.0151 HO 0.0196 | stack TT 0.0143 | C TT 0.580 HO 0.631 | theta [0.06431 3.179 2.758 0.7744 0.001437] (10 boot, 2 s)
+[00:16:17 |    1.4 min] S6 growth propagation 10/10 (1 s)
+[00:16:17 |    1.4 min] S7 arm prediction done (0 s)
+[00:16:36 |    1.7 min] S8 final evaluation and outputs done (19 s)
+[00:16:36 |    1.7 min] ==== finished, total 1.7 min ====
+Parallel pool using the 'Processes' profile is shutting down.
