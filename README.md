@@ -73,4 +73,4 @@ matlab -batch "cd figures; make_figures; arm_sensitivity; make_heatmaps"
 | NHANES 1999–2000, 2017–2020 body measures | CDC/NCHS | Growth cross-check |
 | IMPRINT finite-element dataset | Zenodo [10.5281/zenodo.23023603](https://doi.org/10.5281/zenodo.23023603) | Liner stiffness cross-check |
 
-Third-party datasets and the included paper keep their original licences. Check each source's terms before making this repository public.
+Third-party datasets and the included paper remain under their original licences and terms of use; see each source for details.
